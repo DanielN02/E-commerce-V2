@@ -1,0 +1,125 @@
+/* Styling Hero Image to Page */
+
+.slide-container {
+  position: relative;
+}
+
+/*Styling Hero Image slider*/
+
+.container {
+  position: relative;
+}
+
+.container .slide-container .slide {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.container .slide-container .slide video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  animation: fadeIn 0.4s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(1.5);
+  }
+}
+
+.container .slide-container .slide .content {
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.container .slide-container .slide .content h1 {
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate 0.4s linear 0.4s backwards;
+}
+
+.container .slide-container .slide .content h2 {
+  font-size: 30px;
+  color: white;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate 0.4s linear 0.6s backwards;
+}
+
+.container .slide-container .slide .content p {
+  max-width: 700px;
+  font-size: 20px;
+  color: white;
+  padding: 5px 0;
+  font-weight: lighter;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate 0.4s linear 0.6s backwards;
+}
+
+.container .slide-container .slide .content .btn {
+  display: inline-block;
+  padding: 9px 30px;
+  font-size: 17px;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.container .slide-container .slide .content .btn:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5) translateY(-50px);
+  }
+}
+
+.container .slide-container {
+  display: none;
+}
+
+.container .slide-container.active {
+  display: block;
+}
+
+.container #next,
+.container #prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  color: white;
+  font-weight: bold;
+  height: 60px;
+  width: 50px;
+  line-height: 55px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container #next {
+  right: 0;
+}
+
+.container #prev {
+  left: 0;
+}
