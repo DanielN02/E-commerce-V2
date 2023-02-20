@@ -9,7 +9,7 @@ const logo = require("./images/logo.png");
 //   useScript("https://kit.fontawesome.com/081a7f5200.js");
 // };
 
-export default function () {
+function Nav() {
   return (
     <div>
       {/* Start of Nav */}
@@ -67,6 +67,8 @@ export default function () {
     </div>
   );
 }
+
+export default Nav;
 
 /* const navbarMenu = document.getElementById("menu"); //Grabs the menu ID
 const burgerMenu = document.getElementById("burger"); //Grabs the burger ID

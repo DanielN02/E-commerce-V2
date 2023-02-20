@@ -11,9 +11,11 @@ function Shoes() {
   const [productShoesList, setProductShoesList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3003/shoesfilter").then((response) => {
-      setProductShoesList(response.data);
-    });
+    Axios.get("https://sttc-e-commerce-mysql.herokuapp.com/shoesfilter").then(
+      (response) => {
+        setProductShoesList(response.data);
+      }
+    );
   }, []);
 
   return (
