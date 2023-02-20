@@ -11,7 +11,9 @@ function Collectibles() {
   const [productCollectiblesList, setProductCollectiblesList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3003/collectiblesfilter").then((response) => {
+    Axios.get(
+      "https://sttc-e-commerce-mysql.herokuapp.com/collectiblesfilter"
+    ).then((response) => {
       setProductCollectiblesList(response.data);
     });
   }, []);

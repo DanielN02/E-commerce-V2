@@ -12,8 +12,8 @@ const Filtershoes = () => {
 
   const getProducts = (filter) => {
     const url = filter
-      ? `http://localhost:3003/shoesfilter${filter}`
-      : "http://localhost:3003/shoes";
+      ? `https://sttc-e-commerce-mysql.herokuapp.com/shoesfilter${filter}`
+      : "https://sttc-e-commerce-mysql.herokuapp.com/shoes";
     Axios.get(url, {})
       .then((response) => {
         setProducts(response.data);
@@ -50,12 +50,17 @@ const Filtershoes = () => {
       </div>
       <section className="container">
         <div id="products">
+          {/* created an array for each product and displays it */}
           {productShoesList.map((value) => {
             return (
               <div>
                 <div class="card">
                   <h1>{value.Title}</h1>
-                  <img className="card-image" src={`${value.Image}`} />
+                  <img
+                    className="card-image"
+                    src={`${value.Image}`}
+                    alt="sneakers"
+                  />
                   <h2>{value.Price}</h2>
                   <p>{value.Description}</p>
                   <button type="button" class="product-btn">

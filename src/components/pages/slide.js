@@ -4,8 +4,6 @@ import "./Index.css";
 import { videos } from "./SliderData";
 import Nav from "../Nav";
 import Footer from "../Footer";
-// import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-// import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 function Slide() {
   const [currVid, SetCurrVid] = useState(0);

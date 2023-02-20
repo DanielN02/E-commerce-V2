@@ -11,9 +11,11 @@ function Tops() {
   const [productTopsList, setProductTopsList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3003/topsfilter").then((response) => {
-      setProductTopsList(response.data);
-    });
+    Axios.get("https://sttc-e-commerce-mysql.herokuapp.com/topsfilter").then(
+      (response) => {
+        setProductTopsList(response.data);
+      }
+    );
   }, []);
 
   return (
@@ -27,7 +29,7 @@ function Tops() {
               <div class="content">
                 <h1>Graphic Tees</h1>
               </div>
-              <img src={topsHero} alt="A picture of graphic Tees" />
+              <img src={topsHero} alt="Graphic Tees" />
             </div>
           </div>
         </section>
@@ -38,6 +40,7 @@ function Tops() {
           </div>
           <Filtertops />
           <div id="products">
+            {/* created an array for each product and displays it */}
             {productTopsList.map((value) => {
               return (
                 <div>
